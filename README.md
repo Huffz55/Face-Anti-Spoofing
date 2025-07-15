@@ -89,6 +89,7 @@ Every second a screenshot is saved to `images/sample/`. Press **`c`** to clear 
 ├── requirements.txt
 └── README.md
 ```
+---
 ## 🖼️ Demo
 
 > Add your own GIF or screenshots here showing:
