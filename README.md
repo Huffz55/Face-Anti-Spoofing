@@ -6,20 +6,18 @@ Real‑time liveness detection powered by the **MiniVision “Silent‑Face Anti
 
 ## ✨ Features
 
-| Mode                   | Script      | What it does                                                                                                                                                                                              |
-| ---------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Web UI**             | `app.py`    | Launches a Flask web server where you can<br>▪ **Upload a photo** **or**<br>▪ **Open your webcam** directly in the browser.<br>The frame is analysed and returns **REAL / FAKE** with confidence overlay. |
-| **Real‑time webcam**   | `webcam.py` | Opens your default camera in a window, performs live anti‑spoofing on each frame. <br>**Press `q`** to quit.                                                                                              |
-| **Screenshot watcher** | `main.py`   | Every second grabs a screenshot of your desktop, scans faces, and saves annotated results to `captures/`. <br>**Press `c`** to clear saved images, **`q`** to quit.                                       |
+| Mode                   | Script      | What it does                                                                                                                                                                                  |
+| ---------------------- | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Web UI**             | `app.py`    | Launches a Flask web server where you can▪ **Upload a photo** **or**▪ **Open your webcam** directly in the browser.The frame is analysed and returns **REAL / FAKE** with confidence overlay. |
+| **Real‑time webcam**   | `webcam.py` | Opens your default camera in a window, performs live anti‑spoofing on each frame. \*\*Press \*\***`q`** to quit.                                                                              |
+| **Screenshot watcher** | `main.py`   | Every second grabs a screenshot of your desktop, scans faces, and saves annotated results to **`images/sample/`**. Press **`c`** to clear the folder, **`q`** to quit.                        |
 
 ---
 
 ## 🔧 Requirements
 
 * Python ≥ 3.9
-* OpenCV, NumPy, Flask (see `requirements.txt`)
-* ONNX Runtime **OR** OpenVINO Runtime (optional, for acceleration)
-* Model weights from the MiniVision repository
+* OpenCV, NumPy, Flask — install via `requirements.txt`
 
 ```bash
 pip install -r requirements.txt
@@ -29,15 +27,12 @@ pip install -r requirements.txt
 
 ## 📥 Model Weights
 
-1. Download **`anti-spoof-mn3.onnx`** (or any supported Silent‑Face variant) from the original project: [https://github.com/minivision-ai/Silent-Face-Anti-Spoofing-APK](https://github.com/minivision-ai/Silent-Face-Anti-Spoofing-APK)
-2. Place the file in **`resources/anti_spoof_models/`** (keep the default name or edit `config.py`).
+The pre‑trained **anti‑spoof‑mn3.onnx** file is **already included** in this repository inside
+`resources/anti_spoof_models/`. No extra download is required.
 
-```
-Face-Anti-Spoofing/
-├─ resources/
-│  └─ anti_spoof_models/
-│     └─ anti-spoof-mn3.onnx
-```
+> Original source & paper: [https://github.com/minivision-ai/Silent-Face-Anti-Spoofing](https://github.com/minivision-ai/Silent-Face-Anti-Spoofing)
+>
+> For the best accuracy, supply portraits with a **3 : 4 aspect ratio** (e.g., 720 × 960).
 
 ---
 
@@ -75,7 +70,7 @@ Press **`q`** to exit.
 python main.py
 ```
 
-Every second a screenshot is saved to `captures/`. Press **`c`** to clear the folder, **`q`** to quit.
+Every second a screenshot is saved to `images/sample/`. Press **`c`** to clear the folder, **`q`** to quit.
 
 ---
 
@@ -87,24 +82,13 @@ Every second a screenshot is saved to `captures/`. Press **`c`** to clear the f
 ├── main.py           # Screenshot‑surveillance script
 ├── webcam.py         # Real‑time webcam CLI
 ├── src/              # Model helpers, preprocessing utils
-├── templates/        # Jinja2 HTML pages for web UI
-├── static/           # CSS/JS assets
+├── templates/        # HTML pages for web UI
+├── static/           # Result images
 ├── resources/
 │   └── anti_spoof_models/  # ONNX weights
 ├── requirements.txt
 └── README.md
 ```
-
----
-
-## ⚙️ Configuration
-
-* **Camera index**: edit `config.py` or pass `--device 1` when supported.
-* **Confidence threshold**: change `THRESHOLD` in `src/config.py`.
-* **Inference backend**: default is ONNX Runtime; set the `--openvino` flag (if implemented) to use OpenVINO.
-
----
-
 ## 🖼️ Demo
 
 > Add your own GIF or screenshots here showing:
