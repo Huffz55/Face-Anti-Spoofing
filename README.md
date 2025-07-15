@@ -102,7 +102,7 @@ Every second a screenshot is saved to `images/sample/`. Press **`c`** to clear 
 
 ## 📚 References & Acknowledgements
 
-* **Silent‑Face Anti‑Spoofing** — MiniVision AI · MIT License · [https://github.com/minivision-ai/Silent-Face-Anti-Spoofing-APK](https://github.com/minivision-ai/Silent-Face-Anti-Spoofing-APK)
+* **Silent‑Face Anti‑Spoofing** — MiniVision AI · MIT License · [https://github.com/minivision-ai/Silent-Face-Anti-Spoofing](https://github.com/minivision-ai/Silent-Face-Anti-Spoofing)
 * Thanks to the authors for the pre‑trained **MN3** liveness model.
 
 ---
