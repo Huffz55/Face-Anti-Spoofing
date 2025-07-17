@@ -92,7 +92,7 @@ Every second a screenshot is saved to `images/sample/`. Press **`c`** to clear 
 ---
 ## 🖼️ Demo
 
-> Add your own GIF or screenshots here showing:
+> Add your own screenshots here showing:
 >
 > 1. Web UI detecting a live face vs. photo.
 > 2. Terminal window of `webcam.py`.
